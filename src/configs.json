@@ -1,0 +1,492 @@
+[
+  {
+    "name": "cmi.score.scaled",
+    "group":false,
+    "description": "Number that reflects the performance of the learner",
+    "values":"real (10,7) range (-1..1)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.completion_status",
+    "group":false,
+    "description": "Indicates whether the learner has completed the SCO",
+    "values":"“completed”, “incomplete”, “not attempted”, “unknown”",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.success_status",
+    "group":false,
+    "description": "Indicates whether the learner has mastered the SCO",
+    "values":"“passed”, “failed”, “unknown”",
+    "type": "RW"
+  },
+  {
+    "name": "cmi._version",
+    "group":false,
+    "description": "Represents the version of the data model",
+    "values":"characterstring",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.comments_from_learner._children",
+    "group":false,
+    "description": "Listing of supported data model elements",
+    "values":"comment,location,timestamp",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.comments_from_learner._count",
+    "group":false,
+    "description": "Current number of learner comments",
+    "values":"non-negative integer",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.comments_from_lms._children",
+    "group":false,
+    "description": "Listing of supported data model elements",
+    "values":"comment,location,timestamp",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.comments_from_lms._count",
+    "group":false,
+    "description": "Current number of comments from the LMS",
+    "values":"non-negative integer",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.completion_threshold",
+    "group":false,
+    "description": "Used to determine whether the SCO should be considered complete",
+    "values":"real(10,7) range (0..1)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.credit",
+    "group":false,
+    "description": "Indicates whether the learner will be credited for performance in the SCO",
+    "values":"“credit”, “no-credit”",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.entry",
+    "group":false,
+    "description": "Asserts whether the learner has previously accessed the SCO",
+    "values":"ab_initio, resume, “”",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.interactions._children",
+    "group":false,
+    "description": "Listing of supported data model elements",
+    "values":"id,type,objectives,timestamp,correct_responses,weighting,learner_response,result,latency,description",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.interactions._count",
+    "group":false,
+    "description": "Current number of interactions being stored by the LMS",
+    "values":"non-negative integer",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.launch_data",
+    "group":false,
+    "description": "Data provided to a SCO after launch, initialized from the dataFromLMS manifest element",
+    "values":"characterstring (SPM: 4000)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.learner_id",
+    "group":false,
+    "description": "Identifies the learner on behalf of whom the SCO was launched",
+    "values":"long_identifier_type (SPM: 4000)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.learner_name",
+    "group":false,
+    "description": "Name provided for the learner by the LMS",
+    "values": "localized_string_type (SPM: 250)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.learner_preference._children",
+    "group":false,
+    "description": "Listing of supported data model elements",
+    "values": "audio_level,language,delivery_speed,audio_captioning",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.max_time_allowed",
+    "group":false,
+    "description": "Amount of accumulated time the learner is allowed to use a SCO",
+    "values": "timeinterval (second,10,2)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.mode",
+    "group":false,
+    "description": "Identifies one of three possible modes in which the SCO may be presented to the learner",
+    "values": "“browse”, “normal”, “review”",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.objectives._children",
+    "group":false,
+    "description": "Listing of supported data model elements",
+    "values": "id,score,success_status,completion_status,description",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.objectives._count",
+    "group":false,
+    "description": "Current number of objectives being stored by the LMS",
+    "values": "non-negative integer",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.scaled_passing_score",
+    "group":false,
+    "description": "Scaled passing score required to master the SCO",
+    "values": "real(10,7) range (-1 .. 1)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.score._children",
+    "group":false,
+    "description": "Listing of supported data model elements",
+    "values": "scaled,raw,min,max",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.time_limit_action",
+    "group":false,
+    "description": "Indicates what the SCO should do when cmi.max_time_allowed is exceeded",
+    "values": "“exit,message”, “continue,message”, “exit,no message”, “continue,no message”",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.total_time",
+    "group":false,
+    "description": "Sum of all of the learner’s session times accumulated in the current learner attempt",
+    "values": "timeinterval (second,10,2)",
+    "type": "RO"
+  },
+  {
+    "name": "adl.nav.request_valid.continue",
+    "group":false,
+    "description": "Used by a SCO to determine if a Continue navigation request will succeed.",
+    "values": "state (true, false, unknown)",
+    "type": "RO"
+  },
+  {
+    "name": "adl.nav.request_valid.previous",
+    "group":false,
+    "description": "Used by a SCO to determine if a Previous navigation request will succeed.",
+    "values": "state (true, false, unknown)",
+    "type": "RO"
+  },
+  {
+    "name": "adl.nav.request_valid.choice.{target=}",
+    "group":false,
+    "description": "Used by a SCO to determine if a Choice navigation request for the target activity will succeed.",
+    "values": "state (true, false, unknown)",
+    "type": "RO"
+  },
+  {
+    "name": "adl.nav.request_valid.jump.{target=}",
+    "group":false,
+    "description": "Used by a SCO to determine if a Jump navigation request for the target activity will succeed.",
+    "values": "state (true, false, unknown)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.learner_preference.audio_level",
+    "group":false,
+    "description": "Specifies an intended change in perceived audio level",
+    "values": "real(10,7), range (0..*)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.learner_preference.language",
+    "group":false,
+    "description": "The learner’s preferred language for SCOs with multilingual capability",
+    "values": "language_type (SPM 250)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.learner_preference.delivery_speed",
+    "group":false,
+    "description": "The learner’s preferred relative speed of content delivery",
+    "values": "real(10,7), range (0..*)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.learner_preference.audio_captioning",
+    "group":false,
+    "description": "Specifies whether captioning text corresponding to audio is displayed",
+    "values": "“-1”, “0”, “1”",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.location",
+    "group":false,
+    "description": "The learner’s current location in the SCO",
+    "values": "characterstring (SPM: 1000)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.progress_measure",
+    "group":false,
+    "description": "Measure of the progress the learner has made toward completing the SCO",
+    "values": "real (10,7) range (0..1)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.score.raw",
+    "group":false,
+    "description": "Number that reflects the performance of the learner relative to the range bounded by the values of min and max",
+    "values": "real (10,7)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.score.min",
+    "group":false,
+    "description": "Minimum value in the range for the raw score",
+    "values": "real (10,7)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.score.max",
+    "group":false,
+    "description": "Maximum value in the range for the raw score",
+    "values": "real (10,7)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.suspend_data",
+    "group":false,
+    "description": "Provides space to store and retrieve data between learner sessions",
+    "values": "characterstring (SPM: 64000)",
+    "type": "RW"
+  },
+  {
+    "name": "adl.nav.request",
+    "group":false,
+    "description": "Navigation request to be processed immediately following Terminate()",
+    "values": "request(continue, previous, choice, jump, exit, exitAll, abandon, abandonAll, suspendAll _none_)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.exit",
+    "group":false,
+    "description": "Indicates how or why the learner left the SCO",
+    "values": "timeout, suspend, logout, normal, “”",
+    "type": "WO"
+  },
+  {
+    "name": "cmi.session_time",
+    "group":false,
+    "description": "Amount of time that the learner has spent in the current learner session for this SCO",
+    "values": "timeinterval (second,10,2)",
+    "type": "WO"
+  },
+  {
+    "name": "cmi.comments_from_lms.n.comment",
+    "group":true,
+    "description": "Comments or annotations associated with a SCO",
+    "values": "localized_string_type (SPM: 4000)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.comments_from_lms.n.location",
+    "group":true,
+    "description": "Point in the SCO to which the comment applies",
+    "values": "characterstring (SPM: 250)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.comments_from_lms.n.timestamp",
+    "group":true,
+    "description": "Point in time at which the comment was created or most recently changed",
+    "values": "time(second,10,0)",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.interactions.n.objectives._count",
+    "group":true,
+    "description": "Current number of objectives (i.e., objective identifiers) being stored by the LMS for this interaction",
+    "values": "non-negative integer",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.interactions.n.correct_responses._count",
+    "group":true,
+    "description": "Current number of correct responses being stored by the LMS for this interaction",
+    "values": "non-negative integer",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.objectives.n.score._children",
+    "group":true,
+    "description": "Listing of supported data model elements",
+    "values": "scaled,raw,min,max",
+    "type": "RO"
+  },
+  {
+    "name": "cmi.comments_from_learner.n.comment",
+    "group":true,
+    "description": "Textual input",
+    "values": "localized_string_type (SPM: 4000)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.comments_from_learner.n.location",
+    "group":true,
+    "description": "Point in the SCO to which the comment applies",
+    "values": "characterstring (SPM: 250)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.comments_from_learner.n.timestamp",
+    "group":true,
+    "description": "Point in time at which the comment was created or most recently changed",
+    "values": "time (second,10,0)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.id",
+    "group":true,
+    "description": "Unique label for the interaction",
+    "values": "long_identifier_type (SPM: 4000)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.type",
+    "group":true,
+    "description": "Which type of interaction is recorded",
+    "values": "“true-false”, “choice”, “fill-in”, “long-fill-in”, “matching”, “performance”, “sequencing”, “likert”, “numeric” or “other”",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.objectives.n.id",
+    "group":true,
+    "description": "Label for objectives associated with the interaction",
+    "values": "long_identifier_type (SPM: 4000)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.timestamp",
+    "group":true,
+    "description": "Point in time at which the interaction was first made available to the learner for learner interaction and response",
+    "values": "time(second,10,0)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.correct_responses.n.pattern",
+    "group":true,
+    "description": "One correct response pattern for the interaction",
+    "values": "format depends on interaction type",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.weighting",
+    "group":true,
+    "description": "Weight given to the interaction relative to other interactions",
+    "values": "real (10,7)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.learner_response",
+    "group":true,
+    "description": "Data generated when a learner responds to an interaction",
+    "values": "format depends on interaction type",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.result",
+    "group":true,
+    "description": "Judgment of the correctness of the learner response",
+    "values": "“correct”, “incorrect”, “unanticipated”, “neutral”) or a real number with values that is accurate to seven significant decimal figures real. ",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.latency",
+    "group":true,
+    "description": "Time elapsed between the time the interaction was made available to the learner for response and the time of the first response",
+    "values": "timeinterval (second,10,2)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.interactions.n.description",
+    "group":true,
+    "description": "Brief informative description of the interaction",
+    "values": "localized_string_type (SPM: 250)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.id",
+    "group":true,
+    "description": "Unique label for the objective",
+    "values": "long_identifier_type (SPM: 4000)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.score.scaled",
+    "group":true,
+    "description": "Number that reflects the performance of the learner for the objective",
+    "values": "real (10,7) range (-1..1)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.score.raw",
+    "group":true,
+    "description": "Number that reflects the performance of the learner, for the objective, relative to the range bounded by the values of min and max",
+    "values": "real (10,7)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.score.min",
+    "group":true,
+    "description": "Minimum value, for the objective, in the range for the raw score",
+    "values": "real (10,7)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.score.max",
+    "group":true,
+    "description": "Maximum value, for the objective, in the range for the raw score",
+    "values": "real (10,7)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.success_status",
+    "group":true,
+    "description": "Indicates whether the learner has mastered the objective",
+    "values": "“passed”, “failed”, “unknown”",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.completion_status",
+    "group":true,
+    "description": "Indicates whether the learner has completed the associated objective",
+    "values": "“completed”, “incomplete”, “not attempted”, “unknown”",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.progress_measure",
+    "group":true,
+    "description": "Measure of the progress the learner has made toward completing the objective",
+    "values": "real (10,7) range (0..1)",
+    "type": "RW"
+  },
+  {
+    "name": "cmi.objectives.n.description",
+    "group":true,
+    "description": "Provides a brief informative description of the objective",
+    "values": "localized_string_type (SPM: 250)",
+    "type": "RW"
+  }
+]
